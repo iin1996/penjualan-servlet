@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.daniel.model.Barang;
 
-public class BarangController extends HttpServlet {
+public class PenjualanController extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static String INSERT_OR_EDIT = "/barang.jsp";
-    private static String LIST_BARANG = "/listBarang.jsp";
+    private static String INSERT_OR_EDIT = "/penjualan.jsp";
+    private static String LIST_BARANG = "/listPenjualan.jsp";
     private BarangDao dao;
 
-    public BarangController() {
+    public PenjualanController() {
         super();
         dao = new BarangDao();
     }
