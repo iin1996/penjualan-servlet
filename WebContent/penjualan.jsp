@@ -14,23 +14,26 @@
 <body>
 
     <form method="POST" action='BarangController' name="frmAddBarang">
-        Kode Barang: <input type="number" readonly="readonly" name="kodeBarang"
-            value="<c:out value="${barang.kodeBarang}" />" /> <br /> 
-        Nama Barang : <input
-            type="text" name="namaBarang"
-            value="<c:out value="${barang.namaBarang}" />" /> <br /> 
-        Harga Jual : <input
-            type="number" name="hargaJual"
-            value="<c:out value="${barang.hargaJual}" />" /> <br /> 
-        Harga Beli : <input
-            type="number" name="hargaBeli"
-            value="<c:out value="${barang.hargaBeli}" />" /> <br /> 
-        Satuan : <input
-            type="number" name="satuan"
-            value="<c:out value="${barang.satuan}" />" /> <br /> 
-        Kategori : <input
+        Kode Futur <input type="number" readonly="readonly" name="kodeFutur"
+            value="<c:out value="${penjualan.kodeBarang}" />" /> <br /> 
+        Tanggal Futur : <input
+            type="text" name="tglFutur"
+            value="<fmt:formatDate pattern="MM/dd/yyyy" value="${penjualan.tglFutur}" />" /> <br /> 
+        Nama Konsumen : <input
+            type="text" name="namaKonsumen"
+            value="<c:out value="${penjualan.namaKonsumen}" />" /> <br /> 
+        Jumlah : <input
+            type="number" name="jumlah"
+            value="<c:out value="${penjualan.jumlah}" />" /> <br /> 
+        Harga Satuan : <input
+            type="number" name="hargaSatuan"
+            value="<c:out value="${penjualan.hargaBeli}" />" /> <br /> 
+        Harga Total : <input
+            type="number" name="hargaTotal"
+            value="<c:out value="${penjualan.hargaTotal}" />" /> <br /> 
+        Kode Barang : <input
             type="text" name="kategori"
-            value="<c:out value="${barang.kategori}" />" /> <br /> 
+            value="<c:out value="${penjualan.kodeBarang}" />" /> <br /> 
         <br /> <input
             type="submit" value="Submit" />
     </form>
