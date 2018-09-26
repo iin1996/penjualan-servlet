@@ -36,26 +36,27 @@ public class PenjualanDao {
 		}
 	}
         	
-	public Barang getBarangBykode_barang(int kodeBarang) {
-		Barang barang = new Barang();
+	public Penjualan getPenjualanBykode_faktur(int kodeFaktur) {
+		Penjualan penjualan = new Penjualan();
 		try {
 			PreparedStatement preparedStatement = connection.
-					prepareStatement("select * from barang where kode_barang=?");
-			preparedStatement.setInt(1, kodeBarang);
+					prepareStatement("select * from penjualan where kode_faktur=?");
+			preparedStatement.setInt(1, kodeFaktur);
 			ResultSet rs = preparedStatement.executeQuery();
 			
 			if (rs.next()) {
-				barang.setKodeBarang(rs.getInt("kode_barang"));
-                                barang.setNamaBarang(rs.getString("nama_barang"));
-                                barang.setHargaJual(rs.getInt("harga_jual"));
-                                barang.setHargaBeli(rs.getInt("harga_beli"));
-                                barang.setSatuan(rs.getInt("satuan"));
-                                barang.setKategori(rs.getString("kategori"));
+				penjualan.setKodeFaktur(rs.getInt("kode_faktur"));
+                                penjualan.setTglFaktur(rs.getDate("tgl_faktur"));
+                                penjualan.setNamaKonsumen(rs.getString("nama_konsumen"));
+                                penjualan.setJumlah(rs.getInt("harga_jual"));
+                                penjualan.setHargaSatuan(rs.getInt("harga_satuan"));
+                                penjualan.setHargaTotal(rs.getInt("harga_total"));
+                                penjualan.setKodeBarang(rs.getInt("kode_barang"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-		return barang;
+		return penjualan;
 	}
 }
